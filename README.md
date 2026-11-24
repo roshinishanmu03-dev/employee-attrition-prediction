@@ -16,6 +16,7 @@ An explainable machine-learning application for exploring employee attrition pat
 - Batch scoring with configurable threshold and CSV export
 - Synthetic sample dataset for a safe first run
 - Automated tests with GitHub Actions
+- Clean light theme and model/architecture documentation
 
 ## Tech stack
 
@@ -47,21 +48,32 @@ pytest
 
 GitHub Actions runs the test suite automatically on pushes and pull requests.
 
+## Deploy with Streamlit Community Cloud
+
+1. Sign in to Streamlit Community Cloud using GitHub.
+2. Choose **Create app** and select this repository.
+3. Set the branch to `main` and the main file path to `app.py`.
+4. Deploy. The dependencies are listed in `requirements.txt`.
+
 ## Project structure
 
 ```text
 .
+├── .github/workflows/tests.yml
+├── .streamlit/config.toml
 ├── app.py
 ├── data/
 │   ├── README.md
 │   └── sample_hr_attrition.csv
+├── docs/
+│   ├── ARCHITECTURE.md
+│   └── MODEL_CARD.md
 ├── src/
 │   ├── data_quality.py
 │   ├── predict.py
 │   └── train.py
 ├── tests/
 │   └── test_predict.py
-├── .github/workflows/tests.yml
 ├── .gitignore
 ├── LICENSE
 ├── pytest.ini
@@ -82,10 +94,10 @@ The repository includes a **synthetic demonstration dataset** with 320 records. 
 
 ## Roadmap
 
-- [x] Add reproducible synthetic demo dataset
-- [x] Add model training, evaluation and batch scoring
+- [x] Add synthetic demo dataset, training, evaluation and batch scoring
 - [x] Add automated tests and GitHub Actions
-- [ ] Verify Streamlit browser execution on the user's local machine
+- [x] Add model card, architecture guide and Streamlit theme
+- [ ] Verify browser execution on a clean local environment
 - [ ] Add screenshots after a successful local run
 - [ ] Consider cross-validation and fairness analysis for an advanced version
 
